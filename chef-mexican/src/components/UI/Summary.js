@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Summary() {
 	return (
-		<div className="h-60 w-3/6 text-center bg-slate-800 text-white py-3 rounded-md absolute -top-11">
+		<div className="h-60 w-3/6 text-center drop-shadow-xl bg-slate-800 text-white py-2 rounded-md absolute -top-12">
 			<div>
 				<h1 className="text-3xl">We're open for dine-in!</h1>
 				<br />

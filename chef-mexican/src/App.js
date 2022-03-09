@@ -1,8 +1,13 @@
 import Header from "./components/UI/Header";
+
+import Meals from "./components/UI/Meals/Meals";
 function App() {
 	return (
-		<div className="">
+		<div className="flex flex-col bg-slate-700 h-full pb-10">
 			<Header></Header>
+			<div className="flex static justify-center pt-60">
+				<Meals></Meals>
+			</div>
 		</div>
 	);
 }

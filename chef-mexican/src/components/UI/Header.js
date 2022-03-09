@@ -5,9 +5,9 @@ import Summary from "./Summary";
 
 export default function Header() {
 	return (
-		<div className="flex flex-col bg-slate-400 h-48">
+		<div className="flex flex-col bg-slate-700 h-5/6 pt-4">
 			<div className="flex relative py-3 justify-center">
-				<h1 className="uppercase text-6xl font-mono">Chef Mexican</h1>
+				<h1 className="uppercase text-6xl font-mono text-white">Chef Mexican</h1>
 				<HeaderCart />
 			</div>
 			<div className="h-96 pt-3">

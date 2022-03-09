@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"title": "The Loaded",
+		"ingredients": "Chicken, cheese, black beans, chili pepper, tamotoes, sour cream, onions ",
+		"price": 11
+	},
+	{
+		"id": 2,
+		"title": "The Classic (beef or chicken) ",
+		"ingredients": "Onion, garlic, peppers, kidney beans, guacamole",
+		"price": 9
+	},
+	{
+		"id": 3,
+		"title": "Superfood",
+		"ingredients": "Black beans and Pinto beans, chicken or beef, hot and mild salsa, cheddar cheese, tomato rice",
+		"price": 12
+	},
+	{
+		"id": 4,
+		"title": "Fajita & Veg (V)",
+		"ingredients": "mixed vegetables of your choice, avocado, tomato rice or coriander rice",
+		"price": 10
+	},
+	{
+		"id": 5,
+		"title": "Van Nees",
+		"ingredients": "Beef, rice, cream cheese, sour cream, nacho crumbs, salsa verde and Pinto beans",
+		"price": 8
+	}
+]
