@@ -8,8 +8,7 @@ export default function HeaderCart() {
 			<div className="">
 				<FontAwesomeIcon icon={faCartShopping} className="fa-xl" />
 			</div>
-			<button className="font-semibold">Your cart</button>
-
+			<h1 className="font-semibold">Your cart</h1>
 			<div className="bg-red-500 w-8 h-8 rounded-full text-center font-semibold pt-1">
 				<h1 className="">4</h1>
 			</div>
