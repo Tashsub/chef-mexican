@@ -2,9 +2,9 @@ import React from "react";
 import InputForMeal from "./InputForMeal";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 
-export default function () {
+export default function ({identifier}) {
 	const objConfig = {
-		id: "amount",
+		id: identifier,
 		type: "number",
 		min: "1",
 		max: "5",
@@ -18,7 +18,7 @@ export default function () {
 					<InputForMeal label="Amount" input={objConfig} />
 				</div>
 				<div className="pl-1 mt-0.5">
-					<button className="bg-white rounded-md text-white ">
+					<button className="bg-white rounded-md text-white">
 						<BsFillPlusSquareFill size={22} color={"#B91C1B"} />
 					</button>
 				</div>

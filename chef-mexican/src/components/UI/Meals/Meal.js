@@ -11,7 +11,7 @@ export default function Meal(props) {
 			</div>
 			<div></div>
 			<div className="absolute right-8 pt-4 ">
-				<MealForm />
+				<MealForm identifier={props.identifier}/>
 			</div>
 		</div>
 	);

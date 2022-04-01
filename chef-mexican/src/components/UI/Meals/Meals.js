@@ -8,6 +8,7 @@ export default function Meals() {
 			{dataMeals.map((meal) => (
 				<Meal
 					key={meal.id}
+					identifier={meal.id}
 					title={meal.title}
 					ingredients={meal.ingredients}
 					price={meal.price}
