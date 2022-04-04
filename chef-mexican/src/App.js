@@ -1,5 +1,6 @@
 import Header from "./components/UI/Header";
 import Meals from "./components/UI/Meals/Meals";
+import {CartContext} from "./Context/CartContext";
 
 function App() {
 	return (

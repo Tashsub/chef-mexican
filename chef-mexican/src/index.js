@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {ModalContextProvider} from "./Context/ModalContext";
+import { ModalContextProvider } from "./Context/ModalContext";
+import { CartContextProvider } from "./Context/CartContext";
 
 ReactDOM.render(
 	<ModalContextProvider>
-		<App />
+		<CartContextProvider>
+			<App />
+		</CartContextProvider>
 	</ModalContextProvider>,
 	document.getElementById("root")
 );
