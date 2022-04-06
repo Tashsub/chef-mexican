@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 /*
-Meal Schema
+Meal
 
 	id: 1,
     title: "The Loaded",
@@ -10,36 +10,44 @@ Meal Schema
 
 */
 
-
 const CartContext = createContext({
 	cart: [],
-	addItemTocart: () => {},
-    quantity: 0
+	addItemToCart: (meal) => {},
+	price: 0,
+	updateCartPrice: (mealPrice, mealQantity) => {},
 });
 
 export const CartContextProvider = ({ children }) => {
-
 	const [cart, setCart] = useState([]);
 
-    const [quantity, setQuantity] = useState(0);
+	const [price, setPrice] = useState(0);
 
-    const updateQuantity=()=>{
-        let numOfItemsInCart = 0; 
-        for(let i = 0; i<cart.length; i++ ){
-            numOfItemsInCart += cart[i].quantity
-        }
-        setQuantity(numOfItemsInCart);
-    }
+	const updateCartPriceHandler = (mealPrice, mealQantity) => {
+        
+		let currentCartPrice = price;
 
-    const AddMealHandler=(meal)=>{
-        setCart((previousState)=>{
-            return [...previousState, meal];
-        })
-        updateQuantity();
-    }
+		let newCartPrice = currentCartPrice + (mealPrice * mealQantity);
+		
+        setPrice(newCartPrice);
+	};
+
+	const AddMealHandler = (meal) => {
+		if (meal.quantity > 0) {
+			setCart((previousState) => {
+				return [...previousState, meal];
+			});
+		}
+	};
 
 	return (
-		<CartContext.Provider value={{ cart: cart, addItemTocart: AddMealHandler, quantity: quantity }}>
+		<CartContext.Provider
+			value={{
+				cart: cart,
+				addItemToCart: AddMealHandler,
+				price: price,
+				updateCartPrice: updateCartPriceHandler,
+			}}
+		>
 			{children}
 		</CartContext.Provider>
 	);

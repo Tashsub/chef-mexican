@@ -5,9 +5,10 @@ import CartContext from "../../../Context/CartContext";
 
 export default function ({identifier, mealInfo}) {
 
-	const {addItemTocart} = useContext(CartContext);
+	const {addItemToCart,updateCartPrice} = useContext(CartContext);
 
 	const [quantity, setQuantity] = useState(0);
+
 	const {title, price} = mealInfo; 
 
 	const objConfig = {
@@ -16,7 +17,7 @@ export default function ({identifier, mealInfo}) {
 		min: "1",
 		max: "5",
 		step: "1",
-		className: "border-2 border-slate-800 rounded ",
+		className: "border-2 border-slate-800 rounded",
 	};
 
 	const meal = {
@@ -32,7 +33,8 @@ export default function ({identifier, mealInfo}) {
 
 	const handleButton=(e)=>{
 		e.preventDefault();
-		addItemTocart(meal);
+		addItemToCart(meal);
+		updateCartPrice(meal.price, meal.quantity);
 	}
 
 	return (

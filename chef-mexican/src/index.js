@@ -6,11 +6,13 @@ import { ModalContextProvider } from "./Context/ModalContext";
 import { CartContextProvider } from "./Context/CartContext";
 
 ReactDOM.render(
-	<ModalContextProvider>
-		<CartContextProvider>
-			<App />
-		</CartContextProvider>
-	</ModalContextProvider>,
+	<React.StrictMode>
+		<ModalContextProvider>
+			<CartContextProvider>
+				<App />
+			</CartContextProvider>
+		</ModalContextProvider>
+	</React.StrictMode>,
 	document.getElementById("root")
 );
 

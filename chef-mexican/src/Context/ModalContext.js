@@ -6,11 +6,13 @@ const ModalContext = createContext({
 	modalContent: "",
 	hideModal: () => {},
 	showModal: () => {},
-	addModalContent: () => {},
+	addModalContent: (modalContent) => {},
 });
 
 export const ModalContextProvider = ({ children }) => {
+
 	const [modal, setModal] = useState(false);
+
 	const [modalContent, setModalContent] = useState("");
 
 	const showModalhandler = () => {
@@ -36,7 +38,7 @@ export const ModalContextProvider = ({ children }) => {
 			}}
 		>
 			
-			{modal && <Modal />}
+			{modal && <Modal modalContent={modalContent}/>}
 			{children}
 		</ModalContext.Provider>
 	);

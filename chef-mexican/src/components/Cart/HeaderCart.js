@@ -5,11 +5,17 @@ import ModalContext from "../../Context/ModalContext";
 import CartContext from "../../Context/CartContext";
 
 export default function HeaderCart() {
+	const { showModal, addModalContent } = useContext(ModalContext);
 
-	const { showModal } = useContext(ModalContext);
-	const {cart, quantity } = useContext(CartContext);
+	const { cart, price } = useContext(CartContext);
 
-	const numOfItemsInCart = cart.length; 
+	let modalContent = [cart, price];
+
+	let quantity = 0;
+
+	for (let i = 0; i < cart.length; i++) {
+		quantity += cart[i].quantity;
+	}
 
 	return (
 		<>
@@ -19,6 +25,7 @@ export default function HeaderCart() {
 				</div>
 				<button
 					onClick={() => {
+						addModalContent(modalContent);
 						showModal();
 					}}
 					className="font-semibold"
