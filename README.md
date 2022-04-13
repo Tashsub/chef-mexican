@@ -3,7 +3,7 @@ Food delivery app based on Mexican food.
 
 # App is currently live
 <br />
-[Click to view live app](https://app-chef-mexican-wokaa.ondigitalocean.app/)
+[Click to view app](https://app-chef-mexican-wokaa.ondigitalocean.app/)
 
 # Deplyment
 <br />
