@@ -1,17 +1,17 @@
 # chef-mexican
 Food delivery app based on Mexican food.
 
-#App is currently live
+# App is currently live
 <br />
-[Live APP](https://app-chef-mexican-wokaa.ondigitalocean.app/)
+[Click to view live app](https://app-chef-mexican-wokaa.ondigitalocean.app/)
 
-#Deplyment
+# Deplyment
 <br />
 Used digital ocean as the hosing service, in particular the app platform. 
 Continious deployment on each commit into the maim/master branch 
 
 
-#Tech Stack 
+# Tech Stack 
 <br />
 React for componenets 
 Tailwind for the styling
