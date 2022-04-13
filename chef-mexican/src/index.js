@@ -7,11 +7,11 @@ import { CartContextProvider } from "./Context/CartContext";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ModalContextProvider>
-			<CartContextProvider>
+		<CartContextProvider>
+			<ModalContextProvider>
 				<App />
-			</CartContextProvider>
-		</ModalContextProvider>
+			</ModalContextProvider>
+		</CartContextProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

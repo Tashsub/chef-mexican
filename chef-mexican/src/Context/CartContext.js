@@ -12,9 +12,11 @@ Meal
 
 const CartContext = createContext({
 	cart: [],
-	addItemToCart: (meal) => {},
 	price: 0,
+	addItemToCart: (meal) => {},
+	removeItemFromCart: (mealId)=>{},
 	updateCartPrice: (mealPrice, mealQantity) => {},
+	updateCartPriceRemove: (mealPrice) =>{}
 });
 
 export const CartContextProvider = ({ children }) => {
@@ -32,6 +34,7 @@ export const CartContextProvider = ({ children }) => {
 	};
 
 	const AddMealHandler = (meal) => {
+		console.log("ccccc")
 		if (meal.quantity > 0) {
 			setCart((previousState) => {
 				return [...previousState, meal];
@@ -39,13 +42,27 @@ export const CartContextProvider = ({ children }) => {
 		}
 	};
 
+	const removeMealHandler = (mealIdToRemove) => {
+		console.log("ssfdf");
+		const newItemsInCart = cart.filter(meal=> meal.id !== mealIdToRemove); 
+		setCart(newItemsInCart);
+	};
+
+	const UpdatePriceRemoveHandler =(mealPrice)=>{
+		console.log("eeeeeeee")
+		const newCartPrice = price - mealPrice; 
+		setPrice(newCartPrice); 
+	}
+
 	return (
 		<CartContext.Provider
 			value={{
 				cart: cart,
-				addItemToCart: AddMealHandler,
 				price: price,
+				addItemToCart: AddMealHandler,
+				removeItemFromCart: removeMealHandler,
 				updateCartPrice: updateCartPriceHandler,
+				updateCartPriceRemove: UpdatePriceRemoveHandler 
 			}}
 		>
 			{children}
