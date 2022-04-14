@@ -5,7 +5,7 @@ Food delivery app based on Mexican food.
 <br />
 [Click to view app](https://app-chef-mexican-wokaa.ondigitalocean.app/)
 
-# Deplyment
+# Deployment
 <br />
 Used digital ocean as the hosing service, in particular the app platform. 
 Continious deployment on each commit into the maim/master branch 
