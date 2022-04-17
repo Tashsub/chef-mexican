@@ -13,8 +13,8 @@ Continious deployment on each commit into the maim/master branch
 
 # Tech Stack 
 <br />
-React for componenets 
-Tailwind for the styling
-Context API for sate mamangement
+-React for componenets 
+-Tailwind for the styling
+-Context API for sate mamangement
 
 
