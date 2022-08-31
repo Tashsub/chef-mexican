@@ -14,9 +14,9 @@ const CartContext = createContext({
 	cart: [],
 	price: 0,
 	addItemToCart: (meal) => {},
-	removeItemFromCart: (mealId)=>{},
+	removeItemFromCart: (mealId) => {},
 	updateCartPrice: (mealPrice, mealQantity) => {},
-	updateCartPriceRemove: (mealPrice) =>{}
+	updateCartPriceRemove: (mealPrice) => {},
 });
 
 export const CartContextProvider = ({ children }) => {
@@ -25,17 +25,35 @@ export const CartContextProvider = ({ children }) => {
 	const [price, setPrice] = useState(0);
 
 	const updateCartPriceHandler = (mealPrice, mealQantity) => {
-        
 		let currentCartPrice = price;
 
-		let newCartPrice = currentCartPrice + (mealPrice * mealQantity);
-		
-        setPrice(newCartPrice);
+		let newCartPrice = currentCartPrice + mealPrice * mealQantity;
+
+		setPrice(newCartPrice);
 	};
 
 	const AddMealHandler = (meal) => {
-		console.log("ccccc")
 		if (meal.quantity > 0) {
+			//Check if meal already exists in cart
+			let ids = cart.filter((x) => x.id);
+
+			// 	const original = cart.filter((x) => x.id == meal.id);
+			// 	const newItems = cart.filter((item) => item.id !== meal.id);
+
+			// 	console.log(newItems);
+
+			// 	const newMeal = {
+			// 		id: meal.id,
+			// 		title: meal.title,
+			// 		quantity: meal.quantity + original[0].quantity,
+			// 		price: meal.price,
+			// 	};
+
+			// 	setCart((prevState) => {
+			// 		console.log(prevState);
+			// 	});
+			// }
+
 			setCart((previousState) => {
 				return [...previousState, meal];
 			});
@@ -43,16 +61,14 @@ export const CartContextProvider = ({ children }) => {
 	};
 
 	const removeMealHandler = (mealIdToRemove) => {
-		console.log("ssfdf");
-		const newItemsInCart = cart.filter(meal=> meal.id !== mealIdToRemove); 
+		const newItemsInCart = cart.filter((meal) => meal.id !== mealIdToRemove);
 		setCart(newItemsInCart);
 	};
 
-	const UpdatePriceRemoveHandler =(mealPrice)=>{
-		console.log("eeeeeeee")
-		const newCartPrice = price - mealPrice; 
-		setPrice(newCartPrice); 
-	}
+	const UpdatePriceRemoveHandler = (mealPrice) => {
+		const newCartPrice = price - mealPrice;
+		setPrice(newCartPrice);
+	};
 
 	return (
 		<CartContext.Provider
@@ -62,7 +78,7 @@ export const CartContextProvider = ({ children }) => {
 				addItemToCart: AddMealHandler,
 				removeItemFromCart: removeMealHandler,
 				updateCartPrice: updateCartPriceHandler,
-				updateCartPriceRemove: UpdatePriceRemoveHandler 
+				updateCartPriceRemove: UpdatePriceRemoveHandler,
 			}}
 		>
 			{children}

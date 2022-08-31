@@ -2,14 +2,14 @@ import React, { useContext, useState } from "react";
 import InputForMeal from "./InputForMeal";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import CartContext from "../../../Context/CartContext";
+import { ToastContainer, toast } from "react-toastify";
 
-export default function ({identifier, mealInfo}) {
-
-	const {addItemToCart,updateCartPrice} = useContext(CartContext);
+export default function ({ identifier, mealInfo }) {
+	const { addItemToCart, updateCartPrice } = useContext(CartContext);
 
 	const [quantity, setQuantity] = useState(0);
 
-	const {title, price} = mealInfo; 
+	const { title, price } = mealInfo;
 
 	const objConfig = {
 		id: identifier,
@@ -22,20 +22,26 @@ export default function ({identifier, mealInfo}) {
 
 	const meal = {
 		id: identifier,
-		title: title, 
-		quantity: quantity, 
-		price: price
-	}
+		title: title,
+		quantity: quantity,
+		price: price,
+	};
 
-	const getInput=(input)=>{
+	const getInput = (input) => {
 		setQuantity(parseInt(input));
-	}
+	};
 
-	const handleButton=(e)=>{
+	const handleButton = (e) => {
 		e.preventDefault();
 		addItemToCart(meal);
 		updateCartPrice(meal.price, meal.quantity);
-	}
+		toast.success(meal.title + " has been added to your cart", {
+			position: "top-center",
+			hideProgressBar: true,
+			closeOnClick: true,
+			draggable: true,
+		});
+	};
 
 	return (
 		<div>
@@ -44,7 +50,10 @@ export default function ({identifier, mealInfo}) {
 					<InputForMeal label="Amount" input={objConfig} getInput={getInput} />
 				</div>
 				<div className="pl-1 mt-0.5">
-					<button onClick={handleButton} className="bg-white rounded-md text-white">
+					<button
+						onClick={handleButton}
+						className="bg-white rounded-md text-white"
+					>
 						<BsFillPlusSquareFill size={22} color={"#B91C1B"} />
 					</button>
 				</div>

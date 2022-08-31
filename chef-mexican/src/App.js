@@ -1,6 +1,8 @@
 import Header from "./components/UI/Header";
 import Meals from "./components/UI/Meals/Meals";
-import {CartContext} from "./Context/CartContext";
+import { CartContext } from "./Context/CartContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 	return (
@@ -9,7 +11,7 @@ function App() {
 			<div className="flex static justify-center pt-60">
 				<Meals></Meals>
 			</div>
-			
+			<ToastContainer />
 		</div>
 	);
 }

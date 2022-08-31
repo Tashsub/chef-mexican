@@ -4,7 +4,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ModalContextProvider } from "./Context/ModalContext";
 import { CartContextProvider } from "./Context/CartContext";
-
 ReactDOM.render(
 	<React.StrictMode>
 		<CartContextProvider>
